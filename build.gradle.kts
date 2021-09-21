@@ -1,8 +1,25 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+buildscript {
+    repositories {
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
+    }
+    dependencies {
+        classpath("io.qameta.allure:allure-gradle:2.8.1")
+    }
+}
+
+allure {
+    version = "2.14.0"
+}
+
+apply(plugin = "io.qameta.allure")
+
 plugins {
     kotlin("jvm") version "1.5.31"
-    application
+    id("io.qameta.allure") version "2.8.1"
 }
 
 group = "me.v_21"
@@ -15,8 +32,9 @@ repositories {
 dependencies {
     implementation("org.testng:testng:7.4.0")
     implementation("com.codeborne:selenide:5.24.3")
-    testImplementation(kotlin("test"))
-
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.21")
+    implementation("io.qameta.allure:allure-testng:2.15.0")
+    implementation("io.qameta.allure:allure-selenide:2.15.0")
 }
 
 tasks.test {
@@ -26,10 +44,6 @@ tasks.test {
     }
 }
 
-tasks.withType<KotlinCompile>() {
+tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "11"
-}
-
-application {
-    mainClass.set("MainKt")
 }
