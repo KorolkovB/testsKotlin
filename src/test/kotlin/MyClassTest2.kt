@@ -20,7 +20,6 @@ class MyClassTest2 {
 
     @AfterMethod
     fun tearDown() {
-        SelenideLogger.removeListener<AllureSelenide>("AllureSelenide")
         println("Test finished")
     }
 
