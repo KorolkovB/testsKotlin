@@ -13,11 +13,17 @@ repositories {
 }
 
 dependencies {
+    implementation("org.testng:testng:7.4.0")
+    implementation("com.codeborne:selenide:5.24.3")
     testImplementation(kotlin("test"))
+
 }
 
 tasks.test {
-    useTestNG()
+    useTestNG {
+        useDefaultListeners = true
+        suites("src/test/resources/suite.xml")
+    }
 }
 
 tasks.withType<KotlinCompile>() {
