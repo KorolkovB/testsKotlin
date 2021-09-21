@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 
 
-class MyClassTest {
+class MyClassTest2 {
 
     @BeforeMethod
     fun setUp() {

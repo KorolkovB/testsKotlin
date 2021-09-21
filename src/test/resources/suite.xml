@@ -7,10 +7,10 @@
         </classes>
     </test>
 
-<!--    <test name="Regression1">-->
-<!--        <classes>-->
-<!--            <class name="test.sample.ParameterSample"/>-->
+    <test name="Regression1">
+        <classes>
+            <class name="MyClassTest2"/>
 <!--            <class name="test.sample.ParameterTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+        </classes>
+    </test>
 </suite>
