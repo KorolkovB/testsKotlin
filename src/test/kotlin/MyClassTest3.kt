@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
 
 
-class MyClassTest {
+class MyClassTest3 {
 
     @BeforeClass
     fun setUp() {
@@ -35,7 +35,7 @@ class MyClassTest {
     }
 
     @Test
-    fun testMyFun() {
+    fun testMyFun5() {
         println(Thread.currentThread().id)
         open("https://google.com/ncr")
         element(By.name("q")).setValue("selenide").pressEnter()
@@ -44,7 +44,7 @@ class MyClassTest {
     }
 
     @Test
-    fun testMyFun2() {
+    fun testMyFun6() {
         println(Thread.currentThread().id)
         open("https://google.com/ncr")
         element(By.name("q")).setValue("selenide").pressEnter()
