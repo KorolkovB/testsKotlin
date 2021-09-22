@@ -35,6 +35,7 @@ dependencies {
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.21")
     implementation("io.qameta.allure:allure-testng:2.15.0")
     implementation("io.qameta.allure:allure-selenide:2.15.0")
+    implementation("io.github.bonigarcia:webdrivermanager:5.0.3")
 }
 
 tasks.test {
