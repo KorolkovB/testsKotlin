@@ -36,6 +36,7 @@ dependencies {
     implementation("io.qameta.allure:allure-testng:2.15.0")
     implementation("io.qameta.allure:allure-selenide:2.15.0")
     implementation("io.github.bonigarcia:webdrivermanager:5.0.3")
+    implementation("io.github.microutils:kotlin-logging:2.0.11")
 }
 
 tasks.test {

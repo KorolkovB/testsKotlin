@@ -4,8 +4,8 @@
     <test name="Class1">
         <classes>
             <class name="MyClassTest"/>
-            <class name="MyClassTest2"/>
-            <class name="MyClassTest3"/>
+<!--            <class name="MyClassTest2"/>-->
+<!--            <class name="MyClassTest3"/>-->
         </classes>
     </test>
 </suite>
