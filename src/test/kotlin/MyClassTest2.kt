@@ -3,34 +3,46 @@ import com.codeborne.selenide.Condition.text
 import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selenide.*
 import com.codeborne.selenide.logevents.SelenideLogger
+import io.qameta.allure.Description
+import io.qameta.allure.Step
 import io.qameta.allure.selenide.AllureSelenide
+import io.qameta.allure.selenide.LogType
+import mu.KLogging
 import org.openqa.selenium.By
 import org.testng.annotations.BeforeClass
+import org.testng.annotations.BeforeMethod
 import org.testng.annotations.Test
+import org.testng.asserts.Assertion
+import pages.GoogleStartPage
+import java.util.logging.Level
 
 class MyClassTest2 {
+    companion object : KLogging()
 
-    @BeforeClass
-    fun setUp() {
-        SelenideLogger.addListener("AllureSelenide", AllureSelenide().screenshots(true).savePageSource(true))
-        Configuration.startMaximized = true
+    @BeforeMethod
+    @Description("Описание тестового метода setUpMethod")
+    fun setUpMethod() {
+        SelenideLogger.addListener(
+            "AllureSelenide",
+            AllureSelenide()
+                .includeSelenideSteps(true)
+                .screenshots(true)
+                .savePageSource(true)
+                .enableLogs(LogType.BROWSER, Level.ALL)
+        )
     }
 
     @Test
-    fun testMyFun3() {
-        println(Thread.currentThread().id)
-        open("https://google.com/ncr")
-        element(By.name("q")).setValue("selenide").pressEnter()
-        elements(By.cssSelector("#res .g")).shouldHave(sizeGreaterThan(5))
-        element(By.cssSelector("#res .g")).shouldHave(text("concise ui tests in Java"))
-    }
-
-    @Test
+    @Description("Описание тестового метода testMyFun3")
     fun testMyFun4() {
-        println(Thread.currentThread().id)
+        logger.info { "Открываем стартовую страницу" }
         open("https://google.com/ncr")
-        element(By.name("q")).setValue("selenide").pressEnter()
-        elements(By.cssSelector("#res .g")).shouldHave(sizeGreaterThan(5))
-        element(By.cssSelector("#res .g")).shouldHave(text("concise ui tests in Java"))
+
+        GoogleStartPage.queryInput.value = "selenide"
+        GoogleStartPage.queryInput.pressEnter()
+
+        Assertion().assertTrue(GoogleStartPage.searchResults.size > 5)
+        GoogleStartPage.searchResults.shouldHave(sizeGreaterThan(5))
+        GoogleStartPage.searchResults[0].shouldHave(text("concise ui tests in Java"))
     }
 }

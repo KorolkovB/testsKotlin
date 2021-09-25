@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="TestSuite" thread-count="6" parallel="classes">
+<suite name="TestSuite" parallel="classes" thread-count="3">
     <test name="Class1">
         <classes>
+            <class name="setups.BeforeSuiteSetups"/>
             <class name="MyClassTest"/>
-<!--            <class name="MyClassTest2"/>-->
-<!--            <class name="MyClassTest3"/>-->
+            <class name="MyClassTest2"/>
         </classes>
     </test>
 </suite>
