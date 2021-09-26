@@ -17,16 +17,18 @@ dependencies {
 
 allure {
     version = "2.14.0"
+//    autoconfigure = true
+//    aspectjweaver = true
 }
 
 plugins {
-    kotlin("jvm") version "1.5.31"
+    kotlin("jvm") version "1.5.21"
     id("io.qameta.allure") version "2.8.1"
 }
 
 tasks.test {
     useTestNG {
-        suites("src/test/resources/suite.xml")
+        suites("src/test/resources/suites/${System.getProperty("suite")}.xml")
     }
 }
 
