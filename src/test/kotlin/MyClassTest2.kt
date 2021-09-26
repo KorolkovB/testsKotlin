@@ -32,7 +32,9 @@ class MyClassTest2 {
         )
     }
 
-    @Test
+    @Test(groups = [
+        "SmokeTest"
+    ])
     @Description("Описание тестового метода testMyFun3")
     fun testMyFun4() {
         logger.info { "Открываем стартовую страницу" }
@@ -43,6 +45,6 @@ class MyClassTest2 {
 
         Assertion().assertTrue(GoogleStartPage.searchResults.size > 5)
         GoogleStartPage.searchResults.shouldHave(sizeGreaterThan(5))
-        GoogleStartPage.searchResults[0].shouldHave(text("concise ui tests in Java"))
+        GoogleStartPage.searchResults[0].shouldHave(text("concise ui tests in Java2"))
     }
 }

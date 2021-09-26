@@ -14,7 +14,7 @@ import pages.GoogleStartPage.searchResults
 import steps.searchQueryResult
 import java.util.logging.Level
 
-
+@Test(groups = ["Smoke"])
 class MyClassTest {
     companion object : KLogging()
 
@@ -44,7 +44,7 @@ class MyClassTest {
 //        WebDriverRunner.getWebDriver().quit()
 //    }
 
-    @Test
+    @Test(groups = ["smoke"])
     @Description("Описание тестового метода testMyFun")
     fun testMyFun() {
         logger.info { "Открываем стартовую страницу" }
@@ -56,7 +56,7 @@ class MyClassTest {
         searchResults[0].shouldHave(text("concise ui tests in Java"))
     }
 
-    @Test
+    @Test(groups = ["smoke"])
     @Description("Описание тестового метода testMyFun2")
     fun testMyFun2() {
         logger.info { "Открываем стартовую страницу" }
@@ -67,6 +67,6 @@ class MyClassTest {
 
         Assertion().assertTrue(searchResults.size > 5)
         searchResults.shouldHave(sizeGreaterThan(5))
-        searchResults[0].shouldHave(text("concise ui tests in Java2"))
+        searchResults[0].shouldHave(text("concise ui tests in Java"))
     }
 }
