@@ -16,7 +16,7 @@ import org.testng.asserts.Assertion
 import pages.GoogleStartPage
 import java.util.logging.Level
 
-class MyClassTest2 {
+class C12346 {
     companion object : KLogging()
 
     @BeforeMethod
@@ -32,19 +32,19 @@ class MyClassTest2 {
         )
     }
 
-    @Test(groups = [
-        "SmokeTest"
-    ])
-    @Description("Описание тестового метода testMyFun3")
-    fun testMyFun4() {
-        logger.info { "Открываем стартовую страницу" }
-        open("https://google.com/ncr")
-
-        GoogleStartPage.queryInput.value = "selenide"
-        GoogleStartPage.queryInput.pressEnter()
-
-        Assertion().assertTrue(GoogleStartPage.searchResults.size > 5)
-        GoogleStartPage.searchResults.shouldHave(sizeGreaterThan(5))
-        GoogleStartPage.searchResults[0].shouldHave(text("concise ui tests in Java2"))
-    }
+//    @Test(groups = [
+//        "SmokeTest"
+//    ])
+//    @Description("Описание тестового метода testMyFun3")
+//    fun testMyFun4() {
+//        logger.info { "Открываем стартовую страницу" }
+//        open("https://google.com/ncr")
+//
+//        GoogleStartPage.queryInput.value = "selenide"
+//        GoogleStartPage.queryInput.pressEnter()
+//
+//        Assertion().assertTrue(GoogleStartPage.searchResults.size > 5)
+//        GoogleStartPage.searchResults.shouldHave(sizeGreaterThan(5))
+//        GoogleStartPage.searchResults[0].shouldHave(text("concise ui tests in Java2"))
+//    }
 }
