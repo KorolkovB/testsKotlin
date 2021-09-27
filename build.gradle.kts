@@ -17,8 +17,6 @@ dependencies {
 
 allure {
     version = "2.14.0"
-//    autoconfigure = true
-//    aspectjweaver = true
 }
 
 plugins {
