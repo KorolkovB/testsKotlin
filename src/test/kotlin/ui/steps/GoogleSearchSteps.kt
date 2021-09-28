@@ -1,4 +1,4 @@
-package steps
+package ui.steps
 
 import com.codeborne.selenide.Selenide.open
 import pages.GoogleStartPage
@@ -12,6 +12,4 @@ fun searchQueryResult(searchString: String) {
         queryInput.value = searchString
         queryInput.pressEnter()
     }
-
 }
-

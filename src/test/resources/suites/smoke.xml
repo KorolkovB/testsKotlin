@@ -3,9 +3,6 @@
 
 <suite name="Smoke тесты" parallel="classes" thread-count="3">
     <test name="Поисковая строка">
-        <classes>
-            <class name="setups.ui.BeforeSuiteSetups"/>
-        </classes>
         <packages>
             <package name="ui"/>
         </packages>
