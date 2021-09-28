@@ -1,14 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="TestSuite" parallel="classes" thread-count="3">
-    <test name="Smokes">
-        <groups>
-            <run>
-                <include name="Regression"/>
-            </run>
-        </groups>
+<suite name="Regression тесты" parallel="classes" thread-count="3">
+    <test name="Поисковая строка">
         <classes>
-            <class name="setups.BeforeSuiteSetups"/>
+            <class name="setups.ui.BeforeSuiteSetups"/>
         </classes>
+        <packages>
+            <package name="ui"/>
+        </packages>
     </test>
 </suite>

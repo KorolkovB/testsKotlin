@@ -6,13 +6,15 @@ repositories {
 }
 
 dependencies {
-    implementation("org.testng:testng:7.4.0")
+    testImplementation("org.testng:testng:7.4.0")
     implementation("com.codeborne:selenide:5.24.3")
-    implementation("org.jetbrains.kotlin:kotlin-test:1.5.21")
-    implementation("io.qameta.allure:allure-testng:2.15.0")
-    implementation("io.qameta.allure:allure-selenide:2.15.0")
-    implementation("io.github.bonigarcia:webdrivermanager:5.0.3")
-    implementation("io.github.microutils:kotlin-logging:2.0.11")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.5.21")
+    testImplementation("io.qameta.allure:allure-testng:2.15.0")
+    testImplementation("io.qameta.allure:allure-selenide:2.15.0")
+    testImplementation("io.github.bonigarcia:webdrivermanager:5.0.3")
+    testImplementation("io.rest-assured:rest-assured:4.4.0")
+    testImplementation("io.rest-assured:json-path:4.4.0")
+    testImplementation("io.rest-assured:kotlin-extensions:4.4.0")
 }
 
 allure {
