@@ -1,4 +1,4 @@
-package setups
+package setups.ui
 
 import com.codeborne.selenide.Configuration
 import io.qameta.allure.Description
